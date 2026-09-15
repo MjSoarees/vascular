@@ -113,8 +113,8 @@ def adicionar_cabecalho_e_marca_dagua(doc, logo_marca_dagua, logos_topo):
             pass
 
 # Carrega as logos da pasta "fotos" em base64 para a interface web
-img1_b64 = img_to_base64("./fotos/logo1.png") or img_to_base64("logo1.png")
-img2_b64 = img_to_base64("./fotos/logo2.png") or img_to_base64("logo2.png")
+img1_b64 = img_to_base64("./fotos/logo2.png") or img_to_base64("logo2.png")
+img2_b64 = img_to_base64("./fotos/logo1.png") or img_to_base64("logo1.png")
 
 
 # --- EXIBIÇÃO DAS 3 LOGOS CENTRALIZADAS E SEMPRE LADO A LADO (PC E MOBILE) ---
@@ -255,7 +255,7 @@ with tab8:
                     section.left_margin = Inches(1)
                     section.right_margin = Inches(1)
 
-                logos_para_word = ["./fotos/logo1.png", "./fotos/logo2.png", "./fotos/logo3.png", "logo1.png", "logo2.png", "logo3.png"]
+                logos_para_word = ["./fotos/logo1.png", "./fotos/logo2.png", "logo1.png", "logo2.png"]
                 logo_principal = "./fotos/logo1.png" if os.path.exists("./fotos/logo1.png") else "logo1.png"
                 
                 # Aplica o cabeçalho e a marca d'água robusta de fundo
