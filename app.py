@@ -113,7 +113,7 @@ def adicionar_cabecalho_e_marca_dagua(doc, logo_marca_dagua, logos_topo):
             pass
 
 # Carrega as logos da pasta "fotos" em base64 para a interface web
-img1_b64 = img_to_base64("./fotos/Design sem nome (12).png") or img_to_base64("Design sem nome (12).png.png")
+img1_b64 = img_to_base64("./fotos/Design sem nome (12).png") or img_to_base64("Design sem nome (12).png")
 # img2_b64 = img_to_base64("./fotos/logo1.png") or img_to_base64("logo1.png")
 
 
