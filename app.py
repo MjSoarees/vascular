@@ -120,7 +120,7 @@ img1_b64 = img_to_base64("./fotos/Design sem nome (12).png") or img_to_base64("D
 # --- EXIBIÇÃO DAS 3 LOGOS CENTRALIZADAS E SEMPRE LADO A LADO (PC E MOBILE) ---
 logos_html = '<div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 15px;">'
 if img1_b64:
-    logos_html += f'<img src="data:image/png;base64,{img1_b64}" style="height: 50px; width: auto;" />'
+    logos_html += f'<img src="data:image/png;base64,{img1_b64}" style="height: 150px; width: auto;" />'
 #if img2_b64:
     #logos_html += f'<img src="data:image/png;base64,{img2_b64}" style="height: 50px; width: auto;" />'
 
