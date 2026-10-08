@@ -256,10 +256,10 @@ with tab8:
                     section.right_margin = Inches(1)
 
                 logos_para_word = ["./fotos/logo1.png", "./fotos/logo2.png", "logo1.png", "logo2.png"]
-                logo_principal = "./fotos/logo1.png" if os.path.exists("./fotos/logo1.png") else "logo1.png"
+                # logo_principal = "./fotos/logo1.png" if os.path.exists("./fotos/logo1.png") else "logo1.png"
                 
                 # Aplica o cabeçalho e a marca d'água robusta de fundo
-                adicionar_cabecalho_e_marca_dagua(doc, logo_principal, logos_para_word)
+                adicionar_cabecalho_e_marca_dagua(doc, logos_para_word)
 
                 p_title = doc.add_paragraph()
                 p_title.paragraph_format.space_before = Pt(24)
