@@ -315,7 +315,7 @@ with st.container():
     cl_exame = st.text_area("Achados do Exame Clínico físico")
     cl_tratamento = st.text_area("Medicação ou tratamento atual em curso")
     
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     with col1:
         ex_anexados = st.selectbox("Há exames complementares anexados?", ["Não", "Sim"])
     with col2:
@@ -324,6 +324,17 @@ with st.container():
     dg_hipotese = st.text_input("Hipótese diagnóstica", placeholder="Ex: Insuficiência venosa crônica")
     dg_duvida = st.text_area("Descreva objetivamente a dúvida clínica para o teleatendimento *", placeholder="Qual a principal dúvida para o especialista vascular?", height=130)
     dg_obs = st.text_area("Observações complementares gerais")
+with st.container():
+    st.markdown("#### Atendimento síncrono")
+    consulta_sincrona = st.selectbox("Gostaria de um atendimento síncrono para esse paciente?", ["Não", "Sim"])
+    if consulta_sincrona == "Sim":
+        st.info("ℹ️ **Selecione o especialista:**")
+        c_sincrona = st.selectbox("Especialistas", ["Dr. Cleinaldo Costa (Seg 10h), (Qui 08h), (Sex 08h).", "Dr. Neivaldo Santos (Seg 10h), (Qui 10h)."])
+    else:
+        c_sincrona = ""
+
+
+    
     
     imagens_exames = st.file_uploader("Selecione as fotos dos exames para anexar ao documento", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
 
@@ -372,6 +383,9 @@ with st.container():
                     pac_idade = calcular_idade(pac_nasc)
 
                     dados_gerais = [
+                        ("ATENDIMENTO", [
+                            ("Atendimento síncrono", consulta_sincrona), ("Especialista escolhido", c_sincrona)
+                        ]),
                         ("PROFISSIONAL SOLICITANTE", [
                             ("Nome do profissional", prof_nome), ("CPF", prof_cpf), ("Profissão", prof_profissao),
                             ("Registro do conselho", prof_conselho), ("RQE", prof_rqe), ("Município", prof_municipio), ("E-mail", prof_email)
@@ -423,6 +437,7 @@ with st.container():
                         ("HIPÓTESE DIAGNÓSTICA E DÚVIDA CLÍNICA", [
                             ("Hipótese diagnóstica", dg_hipotese), ("Dúvida clínica", dg_duvida), ("Observações", dg_obs)
                         ])
+                        
                     ]
 
                     for sec_title, campos in dados_gerais:
